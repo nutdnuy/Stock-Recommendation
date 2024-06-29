@@ -37,7 +37,12 @@ set_background('bcg_light.png')
 st.header('Stock Recommendation System')
 #importing api key as environment variable
 
-openai_api_key = st.sidebar.text_input('OpenAI API Key', type='password')
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+openai_api_key = os.getenv("openai_api_key")
+openai_api_key
 
 st.sidebar.write('This tool provides recommendation based on the RAG & ReAct Based Schemes:')
 lst = ['Get Ticker Value',  'Fetch Historic Data on Stock','Get Financial Statements','Scrape the Web for Stock News','LLM ReAct based Verbal Analysis','Output Recommendation: Buy, Sell, or Hold with Justification']
@@ -50,7 +55,7 @@ for i in lst:
 st.sidebar.markdown(s)
 
 if openai_api_key:
-    llm=ChatOpenAI(temperature=0,model_name='gpt-4-turbo',openai_api_key=openai_api_key)
+    llm=ChatOpenAI(temperature=0,model_name='gpt-4o',openai_api_key=openai_api_key)
 
     #Get Historical Stock Closing Price for Last 1 Year
     def get_stock_price(ticker):
