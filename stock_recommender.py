@@ -41,7 +41,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 openai_api_key = os.getenv("openai_api_key")
-openai_api_key
 
 st.sidebar.write('This tool provides recommendation based on the RAG & ReAct Based Schemes:')
 lst = ['Get Ticker Value',  'Fetch Historic Data on Stock','Get Financial Statements','Scrape the Web for Stock News','LLM ReAct based Verbal Analysis','Output Recommendation: Buy, Sell, or Hold with Justification']
