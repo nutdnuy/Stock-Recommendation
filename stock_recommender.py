@@ -33,7 +33,6 @@ def set_background(png_file):
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
-set_background('bcg_light.png')
 st.header('Stock Recommendation System')
 #importing api key as environment variable
 
